@@ -18,6 +18,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
+//base routes
+Route::get('/api/tasks', [TaskController::class, 'index']);
+Route::get('/api/tasks/{id}', [TaskController::class, 'show']);
+//view routes:
+Route::get('/task/list', [TaskController::class, 'listView']);
 //require __DIR__ . '/auth.php';
